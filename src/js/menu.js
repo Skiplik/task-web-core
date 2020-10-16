@@ -9,7 +9,7 @@ function openMenuButtonClickHandler() {
 
 	menuContainer.addEventListener('click', closeMenuOverlayClickHandler);
 
-	document.addEventListener('keyup', closeMenuKeyupHandler);
+	document.addEventListener('keydown', closeMenuKeydownHandler);
 }
 
 function closeMenuButtonClickHandler() {
@@ -19,17 +19,17 @@ function closeMenuButtonClickHandler() {
 
 	menuContainer.removeEventListener('click', closeMenuOverlayClickHandler);
 
-	document.removeEventListener('keyup', closeMenuKeyupHandler);
+	document.removeEventListener('keydown', closeMenuKeydownHandler);
 }
 
-function closeMenuKeyupHandler() {
+function closeMenuKeydownHandler() {
 	menuContainer.classList.remove('aside--open');
 
 	closeMenuButton.removeEventListener('click', closeMenuButtonClickHandler);
 
 	menuContainer.removeEventListener('click', closeMenuOverlayClickHandler);
 
-	document.removeEventListener('keyup', closeMenuKeyupHandler);
+	document.removeEventListener('keydown', closeMenuKeydownHandler);
 }
 
 function closeMenuOverlayClickHandler(event) {
@@ -41,7 +41,7 @@ function closeMenuOverlayClickHandler(event) {
 
 	menuContainer.removeEventListener('click', closeMenuOverlayClickHandler);
 
-	document.removeEventListener('keyup', closeMenuKeyupHandler);
+	document.removeEventListener('keydown', closeMenuKeydownHandler);
 }
 
 openMenuButton.addEventListener('click', openMenuButtonClickHandler)

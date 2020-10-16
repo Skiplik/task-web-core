@@ -12,7 +12,7 @@ function openCallModalButtonClickHandler() {
 
 	closeCallModalButton.addEventListener('click', closeCallModalButtonClickHandler)
 
-	document.addEventListener('keyup', closeCallModalKeyupHandler);
+	document.addEventListener('keydown', closeCallModalKeydownHandler);
 }
 
 function closeCallModalButtonClickHandler() {
@@ -22,17 +22,17 @@ function closeCallModalButtonClickHandler() {
 
 	closeCallModalButton.removeEventListener('click', closeCallModalButtonClickHandler)
 
-	document.removeEventListener('keyup', closeCallModalKeyupHandler);
+	document.removeEventListener('keydown', closeCallModalKeydownHandler);
 }
 
-function closeCallModalKeyupHandler() {
+function closeCallModalKeydownHandler() {
 	callModal.classList.remove('modal--open');
 
 	callModal.removeEventListener('click', closeCallOverlayClickModalHandler);
 
 	closeCallModalButton.removeEventListener('click', closeCallModalButtonClickHandler)
 
-	document.removeEventListener('keyup', closeCallModalKeyupHandler);
+	document.removeEventListener('keydown', closeCallModalKeydownHandler);
 }
 
 function closeCallOverlayClickModalHandler(event) {
@@ -44,7 +44,7 @@ function closeCallOverlayClickModalHandler(event) {
 
 	closeCallModalButton.removeEventListener('click', closeCallModalButtonClickHandler)
 
-	document.removeEventListener('keyup', closeCallModalKeyupHandler);
+	document.removeEventListener('keydown', closeCallModalKeydownHandler);
 }
 
 function openFeedbackModalButtonClickHandler() {
@@ -54,7 +54,7 @@ function openFeedbackModalButtonClickHandler() {
 
 	closeFeedbackModalButton.addEventListener('click', closeFeedbackModalButtonClickHandler)
 
-	document.addEventListener('keyup', closeFeedbackModalKeyupHandler);
+	document.addEventListener('keydown', closeFeedbackModalKeydownHandler);
 }
 
 function closeFeedbackModalButtonClickHandler() {
@@ -64,17 +64,17 @@ function closeFeedbackModalButtonClickHandler() {
 
 	closeFeedbackModalButton.removeEventListener('click', closeFeedbackModalButtonClickHandler)
 
-	document.removeEventListener('keyup', closeFeedbackModalKeyupHandler);
+	document.removeEventListener('keydown', closeFeedbackModalKeydownHandler);
 }
 
-function closeFeedbackModalKeyupHandler() {
+function closeFeedbackModalKeydownHandler() {
 	feedbackModal.classList.remove('modal--open');
 
 	feedbackModal.removeEventListener('click', closeFeedbackOverlayClickModalHandler);
 
 	closeFeedbackModalButton.removeEventListener('click', closeFeedbackModalButtonClickHandler)
 
-	document.removeEventListener('keyup', closeFeedbackModalKeyupHandler);
+	document.removeEventListener('keydown', closeFeedbackModalKeydownHandler);
 }
 
 function closeFeedbackOverlayClickModalHandler(event) {
@@ -86,7 +86,7 @@ function closeFeedbackOverlayClickModalHandler(event) {
 
 	closeFeedbackModalButton.removeEventListener('click', closeFeedbackModalButtonClickHandler)
 
-	document.removeEventListener('keyup', closeFeedbackModalKeyupHandler);
+	document.removeEventListener('keydown', closeFeedbackModalKeydownHandler);
 }
 
 openCallModalButton.forEach(function(btn) {
