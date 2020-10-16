@@ -5,6 +5,7 @@
 
 	&__close-btn {
 		margin: 24px auto 0 16px;
+
 		@media (min-width: map-get($screen, 'pc')) {
 			margin: 0;
 			position: absolute;
@@ -25,6 +26,7 @@
 		background: map-get($colors, 'white');
 		border: 1px solid map-get($colors, 'light-grey');
 		border-radius: 8px;
+
 		@media (min-width: map-get($screen, 'pc')) {
 			width: 376px;
 			margin-left: 32px;
@@ -34,6 +36,7 @@
 
 	&__info {
 		padding: 16px;
+
 		@media (min-width: map-get($screen, 'pc')) {
 			padding-left: 32px;
 			padding-right: 32px;
@@ -47,6 +50,7 @@
 	&__send-btn {
 		margin-left: auto;
 		margin-right: 16px;
+
 		@media (min-width: map-get($screen, 'pc')) {
 			margin-right: 32px;
 		}

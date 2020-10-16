@@ -2,13 +2,16 @@
 	display: flex;
 	align-items: center;
 	border-top: 1px solid map-get($colors, 'light-blue-3');
+
 	@media (max-width: map-get($screen, 'pre-tablet')) {
 		flex-direction: column;
 		padding: 16px 4px 19px 4px;
 	}
+
 	@media (min-width: map-get($screen, 'tablet')) {
 		padding: 32px 24px 25px 24px;
 	}
+
 	@media (min-width: map-get($screen, 'pc')) {
 		padding: 32px 32px 21px 32px;
 	}
@@ -18,9 +21,13 @@
 		flex-direction: column;
 		text-align: center;
 
-		@media (max-width: map-get($screen, 'pre-tablet')) {
-			&:not(:last-child) {
+		&:not(:last-child) {
+			@media (max-width: map-get($screen, 'pre-tablet')) {
 				margin-bottom: 16px;
+			}
+
+			@media (min-width: map-get($screen, 'tablet')) {
+				margin-right: auto;
 			}
 		}
 
@@ -36,14 +43,9 @@
 				flex-basis: 213px;
 				text-align: right;
 			}
+
 			@media (min-width: map-get($screen, 'pc')) {
 				flex-basis: 330px;
-			}
-		}
-
-		@media (min-width: map-get($screen, 'tablet')) {
-			&:not(:last-child) {
-				margin-right: auto;
 			}
 		}
 	}

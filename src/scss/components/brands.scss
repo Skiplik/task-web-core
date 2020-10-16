@@ -7,6 +7,7 @@
 		display: flex;
 		padding-left: 16px;
 		padding-right: 16px;
+
 		@media (min-width: map-get($screen, 'tablet')) {
 			max-width: 100%;
 			flex-wrap: wrap;
@@ -15,6 +16,7 @@
 			row-gap: 16px;
 			column-gap: 24px;
 		}
+
 		@media (min-width: map-get($screen, 'pc')) {
 			padding-left: 32px;
 			padding-right: 32px;
@@ -23,6 +25,7 @@
 
 		&--short {
 			max-height: 160px;
+
 			@media (min-width: map-get($screen, 'tablet')) {
 				overflow: hidden;
 			}
@@ -32,9 +35,11 @@
 	&__item {
 		width: 240px;
 		height: 72px;
+
 		@media (min-width: map-get($screen, 'tablet')) {
 			width: 224px;
 		}
+
 		@media (min-width: map-get($screen, 'pc')) {
 			width: 240px;
 		}
@@ -72,9 +77,11 @@
 		@media (max-width: 767px) {
 			display: none;
 		}
+
 		@media (min-width: map-get($screen, 'tablet')) {
 			margin: 24px 24px 0 24px;
 		}
+
 		@media (min-width: map-get($screen, 'pc')) {
 			margin: 24px 32px 0 32px;
 		}

@@ -10,10 +10,12 @@
 		font-weight: normal;
 		text-transform: uppercase;
 		padding: 16px;
+
 		@media (min-width: map-get($screen, 'tablet')) {
 			padding-left: 24px;
 			padding-right: 24px;
 		}
+
 		@media (min-width: map-get($screen, 'pc')) {
 			padding-left: 32px;
 			padding-right: 32px;
@@ -22,6 +24,7 @@
 
 	&__content {
 		margin-top: 16px;
+
 		@media (min-width: map-get($screen, 'tablet')) {
 			margin-top: 24px;
 		}

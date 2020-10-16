@@ -21,6 +21,6 @@ html {
 	background-color: map-get($colors, 'white-3');
 }
 
-*, *:before, *:after {
+*, *::before, *::after {
 	box-sizing: inherit;
 }

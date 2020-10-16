@@ -1,5 +1,6 @@
 .main {
 	padding-top: 24px;
+
 	@media (min-width: map-get($screen, 'pc')) {
 		padding-top: 42px;
 	}
@@ -7,9 +8,11 @@
 	&__nav {
 		overflow: auto;
 		padding: 24px 16px 0 16px;
+
 		@media (min-width: map-get($screen, 'tablet')) {
 			padding: 32px 24px 0 24px;
 		}
+
 		@media (min-width: map-get($screen, 'pc')) {
 			padding: 8px 32px 0 32px;
 		}
@@ -17,6 +20,7 @@
 		&-list {
 			display: flex;
 			flex-wrap: nowrap;
+
 			@media (min-width: map-get($screen, 'pc')) {
 				flex-wrap: wrap;
 			}
@@ -44,9 +48,11 @@
 
 	&__article {
 		margin-top: 24px;
+
 		@media (min-width: map-get($screen, 'tablet')) {
 			margin-top: 32px;
 		}
+
 		@media (min-width: map-get($screen, 'pc')) {
 			margin-top: 20px;
 		}
