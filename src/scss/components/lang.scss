@@ -1,0 +1,18 @@
+.lang-list {
+	display: flex;
+	padding: 0;
+	font-family: map-get($fonts, 'medium');
+
+	&__item:not(:last-child) {
+		margin-right: 7px;
+	}
+
+	&__link {
+		color: map-get($colors, 'black');
+		transition: color .2s ease-out;
+
+		&:hover, &--active {
+			color: map-get($colors, 'grey');
+		}
+	}
+}

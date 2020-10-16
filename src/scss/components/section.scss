@@ -1,0 +1,29 @@
+.section {
+	width: 100%;
+
+	&__title {
+		width: 100%;
+		background: linear-gradient(-270deg, map-get($colors, 'white-3') 0%, map-get($colors, 'white') 98.61%);
+		border-top: 1px solid map-get($colors,  'light-blue-3');
+		color: map-get($colors, 'grey');
+		font-size: 16px;
+		font-weight: normal;
+		text-transform: uppercase;
+		padding: 16px;
+		@media (min-width: map-get($screen, 'tablet')) {
+			padding-left: 24px;
+			padding-right: 24px;
+		}
+		@media (min-width: map-get($screen, 'pc')) {
+			padding-left: 32px;
+			padding-right: 32px;
+		}
+	}
+
+	&__content {
+		margin-top: 16px;
+		@media (min-width: map-get($screen, 'tablet')) {
+			margin-top: 24px;
+		}
+	}
+}

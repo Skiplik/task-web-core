@@ -1,0 +1,27 @@
+.order-list {
+	display: flex;
+	padding: 0;
+
+	&__item {
+		&:not(:last-child) {
+			margin-right: 16px;
+		}
+	}
+
+	&__link {
+		display: flex;
+		align-items: center;
+
+		&-title {
+			display: none;
+			font-family: 'TT Lakes Medium', sans-serif;
+			color: map-get($colors, 'black');
+			@media (min-width: map-get($screen, 'pc')) {
+				margin-right: 8px;
+				display: inline-block;
+				white-space: nowrap;
+				text-align: right;
+			}
+		}
+	}
+}

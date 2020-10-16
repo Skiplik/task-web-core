@@ -1,0 +1,103 @@
+.menu {
+	display: flex;
+	flex-direction: column;
+	max-width: 360px;
+	width: 100%;
+	min-height: 100%;
+	height: fit-content;
+	background: map-get($colors, 'white');
+	box-shadow:
+		-2px 0px 4px map-get($colors, 'grey-1'),
+		16px 0px 52px map-get($colors, 'blue');
+	@media (min-width: map-get($screen, 'tablet')) {
+		max-width: 320px;
+	}
+
+	&__header {
+		display: flex;
+		align-items: center;
+		height: 90px;
+		padding: 0 24px;
+	}
+
+	&__close-btn {
+		@media (min-width: map-get($screen, 'pc')) {
+			display: none;
+		}
+	}
+
+	&__logo {
+		margin-left: 16px;
+		@media (min-width: map-get($screen, 'pc')) {
+			margin-left: 0;
+		}
+	}
+
+	&__search-btn {
+		margin-left: auto;
+	}
+
+	&__nav {
+		padding: 12px 0;
+
+		&-item:not(:last-child) {
+			margin-bottom: 8px;
+		}
+
+		&-link {
+			display: flex;
+			align-items: center;
+			position: relative;
+			height: 40px;
+			padding: 8px 24px;
+			color: map-get($colors, 'black');
+			font-family: map-get($fonts, 'medium');
+			transition: color .2s ease-out;
+
+			&:hover, &--active {
+				color: map-get($colors, 'grey');
+			}
+
+			&--active {
+				&:before {
+					content: '';
+					position: absolute;
+					top: 4px;
+					left: 0;
+					height: 32px;
+					width: 4px;
+					background-color: map-get($colors, 'light-blue');
+					border-top-right-radius: 4px;
+					border-bottom-right-radius: 4px;
+				}
+			}
+		}
+	}
+
+	&__footer {
+		display: flex;
+		flex-direction: column;
+		margin-top: auto;
+		padding: 0 24px 32px 24px;
+	}
+
+	&__email {
+		margin-top: 16px;
+		color: map-get($colors, 'black');
+		font-family: map-get($fonts, 'medium');
+	}
+
+	&__phone {
+		margin-top: 12px;
+		text-decoration: none;
+		color: map-get($colors, 'black');
+		font-family: map-get($fonts, 'bold');
+		font-size: 24px;
+		line-height: 32px;
+		letter-spacing: -0.6px;
+	}
+
+	&__lang-list {
+		margin-top: 40px;
+	}
+}

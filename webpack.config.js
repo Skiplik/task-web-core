@@ -67,7 +67,7 @@ module.exports = {
   plugins: [
     // Подключаем файл html, стили и скрипты встроятся автоматически
     new HtmlWebpackPlugin({
-      title: 'Web core',
+      title: 'CPS',
       template: './src/index.html',
       inject: true,
       minify: {

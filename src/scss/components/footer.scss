@@ -1,0 +1,60 @@
+.footer {
+	display: flex;
+	align-items: center;
+	border-top: 1px solid map-get($colors, 'light-blue-3');
+	@media (max-width: map-get($screen, 'pre-tablet')) {
+		flex-direction: column;
+		padding: 16px 4px 19px 4px;
+	}
+	@media (min-width: map-get($screen, 'tablet')) {
+		padding: 32px 24px 25px 24px;
+	}
+	@media (min-width: map-get($screen, 'pc')) {
+		padding: 32px 32px 21px 32px;
+	}
+
+	&__box {
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+
+		@media (max-width: map-get($screen, 'pre-tablet')) {
+			&:not(:last-child) {
+				margin-bottom: 16px;
+			}
+		}
+
+		&--copyright {
+			@media (min-width: map-get($screen, 'tablet')) {
+				flex-basis: 218px;
+				text-align: left;
+			}
+		}
+
+		&--info {
+			@media (min-width: map-get($screen, 'tablet')) {
+				flex-basis: 213px;
+				text-align: right;
+			}
+			@media (min-width: map-get($screen, 'pc')) {
+				flex-basis: 330px;
+			}
+		}
+
+		@media (min-width: map-get($screen, 'tablet')) {
+			&:not(:last-child) {
+				margin-right: auto;
+			}
+		}
+	}
+
+	&__text, &__link {
+		text-align: inherit;
+		font-size: 14px;
+		line-height: 16px;
+		mix-blend-mode: normal;
+		font-family: map-get($fonts, 'medium');
+		color: map-get($colors, 'grey');
+		opacity: 0.72;
+	}
+}

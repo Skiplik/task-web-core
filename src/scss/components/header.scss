@@ -1,0 +1,85 @@
+.header {
+	position: relative;
+	display: flex;
+	align-items: center;
+	height: 88px;
+	padding: 0 16px;
+	background-color: map-get($colors, 'white');
+	@media (min-width: map-get($screen, 'tablet')) {
+		padding: 0 24px;
+	}
+	@media (min-width: map-get($screen, 'pc')) {
+		height: 0;
+	}
+
+	&__burger-btn {
+		@media (min-width: map-get($screen, 'tablet')) {
+			position: relative;
+
+			&:after {
+				content: '';
+				position: absolute;
+				top: 4px;
+				right: -20px;
+				width: 2px;
+				height: 32px;
+				background: map-get($colors, 'light-grey');
+				border-radius: 1px;
+			}
+		}
+		@media (min-width: map-get($screen, 'pc')) {
+			display: none;
+		}
+	}
+
+	&__logo {
+		margin-left: 16px;
+		@media (min-width: map-get($screen, 'tablet')) {
+			margin-left: 42px;
+		}
+		@media (min-width: map-get($screen, 'pc')) {
+			display: none;
+		}
+	}
+
+	&__contacts-list {
+		margin: 0;
+		@media (max-width: map-get($screen, 'pre-tablet')) {
+			display: none;
+		}
+		@media (min-width: map-get($screen, 'tablet')) {
+			margin-left: auto;
+		}
+		@media (min-width: map-get($screen, 'pc')) {
+			display: none;
+		}
+	}
+
+	&__order-list {
+		position: relative;
+		margin: 0 0 0 auto;
+		@media (min-width: map-get($screen, 'tablet')) {
+			margin-left: 42px;
+		}
+		@media (min-width: map-get($screen, 'pc')) {
+			position: absolute;
+			z-index: 1;
+			top: 42px;
+			right: 32px;
+		}
+
+		&::before {
+			content: '';
+			position: absolute;
+			top: 4px;
+			left: -20px;
+			width: 2px;
+			height: 32px;
+			background: map-get($colors, 'light-grey');
+			border-radius: 1px;
+			@media (min-width: map-get($screen, 'pc')) {
+				content: none;
+			}
+		}
+	}
+}

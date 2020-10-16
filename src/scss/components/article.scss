@@ -1,0 +1,56 @@
+.article {
+	display: flex;
+	flex-direction: column;
+	@media (min-width: map-get($screen, 'tablet')) {
+		flex-direction: row;
+	}
+
+	&__desc {
+		padding: 0 16px;
+		@media (min-width: map-get($screen, 'tablet')) {
+			padding: 0 24px;
+		}
+		@media (min-width: map-get($screen, 'pc')) {
+			padding: 0 32px;
+		}
+
+		&-inner {
+			overflow: hidden;
+			@media (min-width: map-get($screen, 'tablet')) {
+				max-height: 160px;
+			}
+
+			&--short {
+				max-height: 90px;
+			}
+		}
+	}
+
+	&__text {
+		margin-top: 0;
+		font-size: 14px;
+		line-height: 20px;
+		letter-spacing: 0.2px;
+	}
+
+	&__read-more-btn {
+		margin-top: 16px;
+		padding-left: 8px;
+	}
+
+	&__img {
+		min-width: 320px;
+	}
+
+	&__pic {
+		@media (max-width: map-get($screen, 'pre-tablet')) {
+			margin-top: 16px;
+		}
+		@media (min-width: map-get($screen, 'tablet')) {
+			padding: 0 24px;
+		}
+		@media (min-width: map-get($screen, 'pc')) {
+			padding: 0 32px;
+		}
+	}
+}

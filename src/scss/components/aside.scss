@@ -1,0 +1,17 @@
+.aside {
+	display: none;
+	width: 100%;
+	height: 100%;
+	overflow-x: hidden;
+	background-color: map-get($colors, 'white-4');
+	@media (min-width: map-get($screen, 'pc')) {
+		width: 320px;
+		display: flex;
+		justify-content: flex-start;
+	}
+
+	&--open {
+		display: flex;
+		z-index: 100;
+	}
+}

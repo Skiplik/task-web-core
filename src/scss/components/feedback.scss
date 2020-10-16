@@ -1,0 +1,59 @@
+.feedback {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+
+	&__close-btn {
+		margin: 24px auto 0 16px;
+		@media (min-width: map-get($screen, 'pc')) {
+			margin: 0;
+			position: absolute;
+			top: 32px;
+			left: -72px;
+		}
+	}
+
+	&__title {
+		margin-top: 32px;
+	}
+
+	&__field {
+		width: 288px;
+		height: 48px;
+		margin: 24px 16px 0 16px;
+		padding: 12px 16px;
+		background: map-get($colors, 'white');
+		border: 1px solid map-get($colors, 'light-grey');
+		border-radius: 8px;
+		@media (min-width: map-get($screen, 'pc')) {
+			width: 376px;
+			margin-left: 32px;
+			margin-right: 32px;
+		}
+
+		&--message {
+			height: 118px;
+			resize: none;
+		}
+	}
+
+	&__info {
+		padding: 16px;
+		@media (min-width: map-get($screen, 'pc')) {
+			padding-left: 32px;
+			padding-right: 32px;
+		}
+	}
+
+	&__link {
+		color: map-get($colors, 'pink');
+	}
+
+	&__send-btn {
+		margin-left: auto;
+		margin-right: 16px;
+		@media (min-width: map-get($screen, 'pc')) {
+			margin-right: 32px;
+		}
+	}
+}
