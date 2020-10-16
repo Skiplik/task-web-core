@@ -1,7 +1,6 @@
 .feedback {
 	display: flex;
 	flex-direction: column;
-	position: relative;
 
 	&__close-btn {
 		margin: 24px auto 0 16px;
@@ -35,6 +34,7 @@
 
 		&--message {
 			height: 118px;
+			min-height: 118px;
 			resize: none;
 		}
 	}

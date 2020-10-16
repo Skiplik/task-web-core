@@ -2,29 +2,26 @@
 	display: none;
 	position: absolute;
 	top: 0;
-	left: 0;
+	right: 0;
 	width: 100%;
+	max-width: 320px;
 	height: 100%;
-	z-index: 999;
-	background: map-get($colors, 'white-4');
+	z-index: 910;
+	background: map-get($colors, 'white');
+	box-shadow: -2px 0px 4px map-get($colors, 'grey-1'), 16px 0px 52px map-get($colors, 'blue');
+
+	@media (min-width: map-get($screen, 'pc')) {
+		max-width: 440px;
+	}
 
 	&--open {
-		display: flex;
-		justify-content: flex-end;
-
-		& + .wrapper {
-			overflow: hidden;
-		}
+		display: block;
 	}
 
 	&__content {
+		overflow-y: auto;
 		width: 100%;
-		max-width: 320px;
-		background: map-get($colors, 'white');
-		box-shadow: -2px 0px 4px map-get($colors, 'grey-1'), 16px 0px 52px map-get($colors, 'blue');
-
-		@media (min-width: map-get($screen, 'pc')) {
-			max-width: 440px;
-		}
+		height: 100%;
+		padding-bottom: 24px;
 	}
 }

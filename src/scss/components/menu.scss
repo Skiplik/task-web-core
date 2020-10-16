@@ -1,18 +1,8 @@
 .menu {
 	display: flex;
 	flex-direction: column;
-	max-width: 360px;
 	width: 100%;
 	min-height: 100%;
-	height: fit-content;
-	background: map-get($colors, 'white');
-	box-shadow:
-		-2px 0px 4px map-get($colors, 'grey-1'),
-		16px 0px 52px map-get($colors, 'blue');
-
-	@media (min-width: map-get($screen, 'tablet')) {
-		max-width: 320px;
-	}
 
 	&__header {
 		display: flex;

@@ -1,0 +1,19 @@
+.overlay {
+	display: none;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: map-get($colors, 'white-4');
+
+	&--visible {
+		display: block;
+	}
+
+	&--modal {
+		z-index: 900;
+	}
+
+	&--menu {
+		z-index: 800;
+	}
+}

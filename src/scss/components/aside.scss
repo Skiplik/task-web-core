@@ -1,18 +1,28 @@
 .aside {
 	display: none;
+	position: absolute;
+	top: 0;
+	right: 0;
 	width: 100%;
+	max-width: 360px;
 	height: 100%;
 	overflow-x: hidden;
-	background-color: map-get($colors, 'white-4');
+	background: map-get($colors, 'white');
+	box-shadow:
+		-2px 0px 4px map-get($colors, 'grey-1'),
+		16px 0px 52px map-get($colors, 'blue');
+
+	@media (min-width: map-get($screen, 'tablet')) {
+		max-width: 320px;
+	}
 
 	@media (min-width: map-get($screen, 'pc')) {
-		width: 320px;
-		display: flex;
-		justify-content: flex-start;
+		display: block;
+		max-width: 320px;
 	}
 
 	&--open {
-		display: flex;
-		z-index: 100;
+		display: block;
+		z-index: 810;
 	}
 }
