@@ -1,7 +1,7 @@
 # Web core: task 1.6
 
 ### Смотреть demo
-- [Demo]()
+- [Demo](https://skiplik.github.io/task-web-core/)
 
 ### или
 ##### Клонировать репозиторий
