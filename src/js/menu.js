@@ -1,35 +1,47 @@
-const burgerBtn = document.querySelector('.header__burger-btn'),
-	aside = document.querySelector('.aside'),
-	closeBtn = aside.querySelector('.aside .i-btn--close');
+const openMenuButton = document.querySelector('.header__burger-btn'),
+	menuContainer = document.querySelector('.aside'),
+	closeMenuButton = document.querySelector('.aside .i-btn--close');
 
 function openMenuButtonClickHandler() {
-	aside.classList.add('aside--open');
+	menuContainer.classList.add('aside--open');
 
-	closeBtn.addEventListener('click', closeMenuHandler);
+	closeMenuButton.addEventListener('click', closeMenuButtonClickHandler);
 
-	aside.addEventListener('click', closeMenuOverlayClickHandler);
+	menuContainer.addEventListener('click', closeMenuOverlayClickHandler);
 
-	document.addEventListener('keyup', closeMenuHandler);
+	document.addEventListener('keyup', closeMenuKeyupHandler);
 }
 
-/*
-* Вопрос на счет наименования обработчиков
-* если один обработчик подходит под разные типы событий, как его называть?
-* не дублировать же код тольок ради разных наименований?
-* closeMenuHandler - его я использую для клика по кнопке и нажатия Esc
-* */
-function closeMenuHandler() {
-	aside.classList.remove('aside--open');
+function closeMenuButtonClickHandler() {
+	menuContainer.classList.remove('aside--open');
 
-	closeBtn.removeEventListener('click', closeMenuHandler);
+	closeMenuButton.removeEventListener('click', closeMenuButtonClickHandler);
 
-	aside.removeEventListener('click', closeMenuOverlayClickHandler);
+	menuContainer.removeEventListener('click', closeMenuOverlayClickHandler);
 
-	document.removeEventListener('keyup', closeMenuHandler);
+	document.removeEventListener('keyup', closeMenuKeyupHandler);
+}
+
+function closeMenuKeyupHandler() {
+	menuContainer.classList.remove('aside--open');
+
+	closeMenuButton.removeEventListener('click', closeMenuButtonClickHandler);
+
+	menuContainer.removeEventListener('click', closeMenuOverlayClickHandler);
+
+	document.removeEventListener('keyup', closeMenuKeyupHandler);
 }
 
 function closeMenuOverlayClickHandler(event) {
-	if (event.target.classList.contains('aside')) closeMenuHandler();
+	if (!event.target.classList.contains('aside')) return;
+
+	menuContainer.classList.remove('aside--open');
+
+	closeMenuButton.removeEventListener('click', closeMenuButtonClickHandler);
+
+	menuContainer.removeEventListener('click', closeMenuOverlayClickHandler);
+
+	document.removeEventListener('keyup', closeMenuKeyupHandler);
 }
 
-burgerBtn.addEventListener('click', openMenuButtonClickHandler)
+openMenuButton.addEventListener('click', openMenuButtonClickHandler)

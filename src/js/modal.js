@@ -1,32 +1,50 @@
-const callOpenBtns = document.querySelectorAll('.i-btn--call'),
+const openCallModalButton = document.querySelectorAll('.i-btn--call'),
 	callModal = document.querySelector('.call').closest('.modal'),
-	callCloseBtn = document.querySelector('.call .i-btn--close'),
-	feedbackOpenBtns = document.querySelectorAll('.i-btn--message'),
+	closeCallModalButton = document.querySelector('.call .i-btn--close'),
+	openFeedbackModalButton = document.querySelectorAll('.i-btn--message'),
 	feedbackModal = document.querySelector('.feedback').closest('.modal'),
-	feedbackCloseBtn = document.querySelector('.feedback .i-btn--close');
+	closeFeedbackModalButton = document.querySelector('.feedback .i-btn--close');
 
 function openCallModalButtonClickHandler() {
 	callModal.classList.add('modal--open');
 
 	callModal.addEventListener('click', closeCallOverlayClickModalHandler);
 
-	callCloseBtn.addEventListener('click', closeCallModalHandler)
+	closeCallModalButton.addEventListener('click', closeCallModalButtonClickHandler)
 
-	document.addEventListener('keyup', closeCallModalHandler);
+	document.addEventListener('keyup', closeCallModalKeyupHandler);
 }
 
-function closeCallModalHandler() {
+function closeCallModalButtonClickHandler() {
 	callModal.classList.remove('modal--open');
 
 	callModal.removeEventListener('click', closeCallOverlayClickModalHandler);
 
-	callCloseBtn.removeEventListener('click', closeCallModalHandler)
+	closeCallModalButton.removeEventListener('click', closeCallModalButtonClickHandler)
 
-	document.removeEventListener('keyup', closeCallModalHandler);
+	document.removeEventListener('keyup', closeCallModalKeyupHandler);
+}
+
+function closeCallModalKeyupHandler() {
+	callModal.classList.remove('modal--open');
+
+	callModal.removeEventListener('click', closeCallOverlayClickModalHandler);
+
+	closeCallModalButton.removeEventListener('click', closeCallModalButtonClickHandler)
+
+	document.removeEventListener('keyup', closeCallModalKeyupHandler);
 }
 
 function closeCallOverlayClickModalHandler(event) {
-	if (event.target.classList.contains('modal')) closeCallModalHandler();
+	if (!event.target.classList.contains('modal')) return;
+
+	callModal.classList.remove('modal--open');
+
+	callModal.removeEventListener('click', closeCallOverlayClickModalHandler);
+
+	closeCallModalButton.removeEventListener('click', closeCallModalButtonClickHandler)
+
+	document.removeEventListener('keyup', closeCallModalKeyupHandler);
 }
 
 function openFeedbackModalButtonClickHandler() {
@@ -34,29 +52,47 @@ function openFeedbackModalButtonClickHandler() {
 
 	feedbackModal.addEventListener('click', closeFeedbackOverlayClickModalHandler);
 
-	feedbackCloseBtn.addEventListener('click', closeFeedbackModalHandler)
+	closeFeedbackModalButton.addEventListener('click', closeFeedbackModalButtonClickHandler)
 
-	document.addEventListener('keyup', closeFeedbackModalHandler);
+	document.addEventListener('keyup', closeFeedbackModalKeyupHandler);
 }
 
-function closeFeedbackModalHandler() {
+function closeFeedbackModalButtonClickHandler() {
 	feedbackModal.classList.remove('modal--open');
 
 	feedbackModal.removeEventListener('click', closeFeedbackOverlayClickModalHandler);
 
-	feedbackCloseBtn.removeEventListener('click', closeFeedbackModalHandler)
+	closeFeedbackModalButton.removeEventListener('click', closeFeedbackModalButtonClickHandler)
 
-	document.removeEventListener('keyup', closeFeedbackModalHandler);
+	document.removeEventListener('keyup', closeFeedbackModalKeyupHandler);
+}
+
+function closeFeedbackModalKeyupHandler() {
+	feedbackModal.classList.remove('modal--open');
+
+	feedbackModal.removeEventListener('click', closeFeedbackOverlayClickModalHandler);
+
+	closeFeedbackModalButton.removeEventListener('click', closeFeedbackModalButtonClickHandler)
+
+	document.removeEventListener('keyup', closeFeedbackModalKeyupHandler);
 }
 
 function closeFeedbackOverlayClickModalHandler(event) {
-	if (event.target.classList.contains('modal')) closeFeedbackModalHandler();
+	if (!event.target.classList.contains('modal')) return;
+
+	feedbackModal.classList.remove('modal--open');
+
+	feedbackModal.removeEventListener('click', closeFeedbackOverlayClickModalHandler);
+
+	closeFeedbackModalButton.removeEventListener('click', closeFeedbackModalButtonClickHandler)
+
+	document.removeEventListener('keyup', closeFeedbackModalKeyupHandler);
 }
 
-callOpenBtns.forEach(function(btn) {
+openCallModalButton.forEach(function(btn) {
 	btn.addEventListener('click', openCallModalButtonClickHandler)
 });
 
-feedbackOpenBtns.forEach(function(btn) {
+openFeedbackModalButton.forEach(function(btn) {
 	btn.addEventListener('click', openFeedbackModalButtonClickHandler)
 });

@@ -1,7 +1,7 @@
 import Swiper, { Pagination } from 'swiper';
 Swiper.use([Pagination]);
 
-const containers = [
+const containersList = [
 	document.querySelector('.brands'),
 	document.querySelector('.types'),
 	document.querySelector('.prices')
@@ -17,7 +17,7 @@ const swiperOptions = {
 	}
 }
 
-containers.forEach(function(container) {
+containersList.forEach(function(container) {
 	if (document.documentElement.clientWidth < 768) {
 		new Swiper(container, swiperOptions);
 	}
