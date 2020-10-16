@@ -3,7 +3,7 @@ const callOpenBtns = document.querySelectorAll('.i-btn--call'),
 	callCloseBtn = document.querySelector('.call .i-btn--close'),
 	feedbackOpenBtns = document.querySelectorAll('.i-btn--message'),
 	feedbackModal = document.querySelector('.feedback').closest('.modal'),
-	feedbackCloseBtn = document.querySelector('.call .i-btn--close');
+	feedbackCloseBtn = document.querySelector('.feedback .i-btn--close');
 
 function openCallModalButtonClickHandler() {
 	callModal.classList.add('modal--open');
