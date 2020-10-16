@@ -39,7 +39,7 @@ export default function() {
 	if (!swiper.brands)
 		swiper.brands = new Swiper(document.querySelector('.brands'), swiper.options);
 
-	if (!swiperTypes)
+	if (!swiper.types)
 		swiper.types = new Swiper(document.querySelector('.types'), swiper.options);
 
 	if (!swiper.prices)
