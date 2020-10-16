@@ -7,12 +7,12 @@ const showMoreOptionsList = [
 	},
 	{
 		container: document.querySelector('.brands__list'),
-		btn: document.querySelector('.brands__read-more-btn'),
+		btn: document.querySelector('.read-more-btn--brands'),
 		containerClassName: 'brands__list--short'
 	},
 	{
 		container: document.querySelector('.types__list'),
-		btn: document.querySelector('.types__read-more-btn'),
+		btn: document.querySelector('.read-more-btn--types'),
 		containerClassName: 'types__list--short'
 	}
 ];

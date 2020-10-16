@@ -5,7 +5,7 @@
 	overflow-x: hidden;
 	background-color: map-get($colors, 'white-4');
 
-@media (min-width: map-get($screen, 'pc')) {
+	@media (min-width: map-get($screen, 'pc')) {
 		width: 320px;
 		display: flex;
 		justify-content: flex-start;

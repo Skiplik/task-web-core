@@ -16,6 +16,7 @@
 			display: none;
 			font-family: map-get($fonts, 'medium');
 			color: map-get($colors, 'black');
+
 			@media (min-width: map-get($screen, 'pc')) {
 				margin-right: 8px;
 				display: inline-block;

@@ -52,6 +52,7 @@
 		border: 1px solid map-get($colors, 'light-grey');
 		border-radius: 6px;
 		background: map-get($colors, 'white');
+
 		@media (min-width: map-get($screen, 'tablet')) {
 			width: 100%;
 			height: 64px;
@@ -101,6 +102,7 @@
 		&--with-btn {
 			flex-direction: row;
 			align-items: flex-end;
+
 			@media (min-width: map-get($screen, 'tablet')) {
 				flex: 1 1 260px;
 				align-items: center;
@@ -133,6 +135,7 @@
 	&__pagination {
 		position: relative;
 		margin-top: 16px;
+
 		@media (min-width: map-get($screen, 'tablet')) {
 			display: none;
 		}
@@ -141,33 +144,24 @@
 	&__info {
 		display: block;
 		width: 288px;
-		margin: 16px 16px 0 16px;
 		letter-spacing: 0.2px;
 		font-size: 14px;
 		line-height: 20px;
+
 		@media (min-width: map-get($screen, 'tablet')) {
 			width: 421px;
-			margin: 24px 24px 0 24px;
-		}
-		@media (min-width: map-get($screen, 'pc')) {
-			margin: 32px 32px 0 32px;
 		}
 	}
 
 	&__offer {
 		display: block;
 		width: 192px;
-		margin: 16px 16px 0 16px;
+		margin-top: 16px;
 		font-family: map-get($fonts, 'medium');
 		color: map-get($colors, 'black');
+
 		@media (min-width: map-get($screen, 'tablet')) {
 			width: auto;
-			margin-left: 24px;
-			margin-right: 24px;
-		}
-		@media (min-width: map-get($screen, 'pc')) {
-			margin-left: 32px;
-			margin-right: 32px;
 		}
 
 		&::after {

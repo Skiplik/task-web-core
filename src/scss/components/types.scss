@@ -63,24 +63,4 @@
 		align-self: flex-end;
 		margin-left: auto;
 	}
-
-	&__pagination {
-		@media (min-width: map-get($screen, 'tablet')) {
-			display: none;
-		}
-	}
-
-	&__read-more-btn {
-		@media (max-width: map-get($screen, 'pre-tablet')) {
-			display: none;
-		}
-
-		@media (min-width: map-get($screen, 'tablet')) {
-			margin: 24px 24px 0 24px;
-		}
-
-		@media (min-width: map-get($screen, 'pc')) {
-			margin: 24px 32px 0 32px;
-		}
-	}
 }
