@@ -1,7 +1,7 @@
 .read-more-btn {
 	border: none;
 	background: none;
-	font-family: 'TT Lakes Medium', sans-serif;
+	font-family: map-get($fonts, 'medium');
 	font-size: 14px;
 	line-height: 18px;
 	letter-spacing: 0.2px;

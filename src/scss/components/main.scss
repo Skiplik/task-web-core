@@ -35,7 +35,7 @@
 			align-items: center;
 			height: 40px;
 			padding: 0 16px;
-			font-family: 'TT Lakes Medium', sans-serif;
+			font-family: map-get($fonts, 'medium');
 			color: map-get($colors, 'grey');
 
 			&--active {
