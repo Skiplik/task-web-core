@@ -1,47 +1,24 @@
 import Swiper, { Pagination } from 'swiper';
 Swiper.use([Pagination]);
 
-const swiper = {
-	brands: null,
-	types: null,
-	prices: null,
-	options: {
-		slidesPerView: 'auto',
-		spaceBetween: 16,
-		loop: true,
-		pagination: {
-			el: '.swiper-pagination',
-			clickable: true
-		}
+const containers = [
+	document.querySelector('.brands'),
+	document.querySelector('.types'),
+	document.querySelector('.prices')
+]
+
+const swiperOptions = {
+	slidesPerView: 'auto',
+	spaceBetween: 16,
+	loop: true,
+	pagination: {
+		el: '.swiper-pagination',
+		clickable: true
 	}
 }
 
-export default function() {
-	if (document.documentElement.clientWidth >= 768) {
-		if (swiper.brands) {
-			swiper.brands.destroy(true, true);
-			swiper.brands = null;
-		}
-
-		if (swiper.types) {
-			swiper.types.destroy(true, true);
-			swiper.types = null;
-		}
-
-		if (swiper.prices) {
-			swiper.prices.destroy(true, true);
-			swiper.prices = null;
-		}
-
-		return;
+containers.forEach(function(container) {
+	if (document.documentElement.clientWidth < 768) {
+		new Swiper(container, swiperOptions);
 	}
-
-	if (!swiper.brands)
-		swiper.brands = new Swiper(document.querySelector('.brands'), swiper.options);
-
-	if (!swiper.types)
-		swiper.types = new Swiper(document.querySelector('.types'), swiper.options);
-
-	if (!swiper.prices)
-		swiper.prices = new Swiper(document.querySelector('.prices'), swiper.options);
-}
+});

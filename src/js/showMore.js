@@ -1,53 +1,36 @@
-function setShowMoreListener(config) {
-	config.btn.addEventListener('click', function(event) {
-		if (config.inner.classList.contains(config.innerClassName)) {
-			config.inner.classList.remove(config.innerClassName);
+const showMoreOptionsList = [
+	{
+		container: document.querySelector('.article__desc-inner'),
+		btn: document.querySelector('.article__read-more-btn'),
+		containerClassName: 'article__desc-inner--short',
+		btnTitle: 'Читать далее'
+	},
+	{
+		container: document.querySelector('.brands__list'),
+		btn: document.querySelector('.brands__read-more-btn'),
+		containerClassName: 'brands__list--short'
+	},
+	{
+		container: document.querySelector('.types__list'),
+		btn: document.querySelector('.types__read-more-btn'),
+		containerClassName: 'types__list--short'
+	}
+];
 
-			event.target.innerText = config.lessTxt || 'Скрыть';
-			event.target.classList.add('read-more-btn--less');
+showMoreOptionsList.forEach(function(options) {
+	options.btn.addEventListener('click', function() {
+		if (options.container.classList.contains(options.containerClassName)) {
+			options.container.classList.remove(options.containerClassName);
+
+			options.btn.innerText = 'Скрыть';
+			options.btn.classList.add('read-more-btn--less');
 
 			return;
 		}
 
-		config.inner.classList.add(config.innerClassName);
+		options.container.classList.add(options.containerClassName);
 
-		event.target.innerText = config.moreTxt || 'Показать все';
-		event.target.classList.remove('read-more-btn--less');
+		options.btn.innerText = options.btnTitle || 'Показать все';
+		options.btn.classList.remove('read-more-btn--less');
 	});
-}
-
-export default function() {
-	let articleInner = document.querySelector('.article__desc-inner'),
-		articleBtn = document.querySelector('.article__read-more-btn');
-
-	if (articleInner && articleBtn) {
-		setShowMoreListener({
-			btn: articleBtn,
-			inner: articleInner,
-			innerClassName: 'article__desc-inner--short',
-			moreTxt: 'Читать далее'
-		})
-	}
-
-	let brandsInner = document.querySelector('.brands__list'),
-		brandsBtn = document.querySelector('.brands__read-more-btn');
-
-	if (brandsInner && brandsBtn) {
-		setShowMoreListener({
-			btn: brandsBtn,
-			inner: brandsInner,
-			innerClassName: 'brands__list--short'
-		})
-	}
-
-	let typesInner = document.querySelector('.types__list'),
-		typesBtn = document.querySelector('.types__read-more-btn');
-
-	if (typesInner && typesBtn) {
-		setShowMoreListener({
-			btn: typesBtn,
-			inner: typesInner,
-			innerClassName: 'types__list--short'
-		})
-	}
-}
+})
