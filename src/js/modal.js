@@ -1,10 +1,10 @@
 const overlayForModal = document.querySelector('.overlay--modal'),
 	openCallModalButton = document.querySelectorAll('.i-btn--call'),
 	callModal = document.querySelector('.modal--call'),
-	closeCallModalButton = document.querySelector('.call .i-btn--close'),
+	closeCallModalButton = document.querySelector('.call__close-btn'),
 	openFeedbackModalButton = document.querySelectorAll('.i-btn--message'),
 	feedbackModal = document.querySelector('.modal--feedback'),
-	closeFeedbackModalButton = document.querySelector('.feedback .i-btn--close');
+	closeFeedbackModalButton = document.querySelector('.feedback__close-btn');
 
 function openCallModal() {
 	overlayForModal.classList.add('overlay--visible');
