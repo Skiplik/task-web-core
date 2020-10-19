@@ -10,9 +10,9 @@ function openMenu() {
 
 	closeMenuButton.addEventListener('click', closeMenuButtonClickHandler);
 
-	overlayForMenu.addEventListener('click', closeMenuOverlayClickHandler);
+	overlayForMenu.addEventListener('click', menuOverlayClickHandler);
 
-	document.addEventListener('keydown', closeMenuKeydownHandler);
+	document.addEventListener('keydown', escapeKeydownHandler);
 }
 
 function closeMenu() {
@@ -22,9 +22,9 @@ function closeMenu() {
 
 	closeMenuButton.removeEventListener('click', closeMenuButtonClickHandler);
 
-	overlayForMenu.removeEventListener('click', closeMenuOverlayClickHandler);
+	overlayForMenu.removeEventListener('click', menuOverlayClickHandler);
 
-	document.removeEventListener('keydown', closeMenuKeydownHandler);
+	document.removeEventListener('keydown', escapeKeydownHandler);
 }
 
 function openMenuButtonClickHandler() {
@@ -35,11 +35,11 @@ function closeMenuButtonClickHandler() {
 	closeMenu();
 }
 
-function closeMenuKeydownHandler(event) {
+function escapeKeydownHandler(event) {
 	if (event.keyCode === 27) closeMenu();
 }
 
-function closeMenuOverlayClickHandler() {
+function menuOverlayClickHandler() {
 	closeMenu();
 }
 

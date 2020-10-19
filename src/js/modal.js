@@ -11,11 +11,11 @@ function openCallModal() {
 
 	callModal.classList.add('modal--open');
 
-	overlayForModal.addEventListener('click', closeCallOverlayClickModalHandler);
+	overlayForModal.addEventListener('click', calModalOverlayClickHandler);
 
 	closeCallModalButton.addEventListener('click', closeCallModalButtonClickHandler);
 
-	document.addEventListener('keydown', closeCallModalKeydownHandler);
+	document.addEventListener('keydown', callModalEscapeKeydownHandler);
 }
 
 function closeCallModal() {
@@ -23,11 +23,11 @@ function closeCallModal() {
 
 	overlayForModal.classList.remove('overlay--visible');
 
-	overlayForModal.removeEventListener('click', closeCallOverlayClickModalHandler);
+	overlayForModal.removeEventListener('click', calModalOverlayClickHandler);
 
 	closeCallModalButton.removeEventListener('click', closeCallModalButtonClickHandler);
 
-	document.removeEventListener('keydown', closeCallModalKeydownHandler);
+	document.removeEventListener('keydown', callModalEscapeKeydownHandler);
 }
 
 function openFeedbackModal() {
@@ -35,11 +35,11 @@ function openFeedbackModal() {
 
 	feedbackModal.classList.add('modal--open');
 
-	overlayForModal.addEventListener('click', closeFeedbackOverlayClickModalHandler);
+	overlayForModal.addEventListener('click', feedbackModalOverlayClickHandler);
 
 	closeFeedbackModalButton.addEventListener('click', closeFeedbackModalButtonClickHandler);
 
-	document.addEventListener('keydown', closeFeedbackModalKeydownHandler);
+	document.addEventListener('keydown', feedbackModalEscapeKeydownHandler);
 }
 
 function closeFeedbackModal() {
@@ -47,11 +47,11 @@ function closeFeedbackModal() {
 
 	overlayForModal.classList.remove('overlay--visible');
 
-	overlayForModal.removeEventListener('click', closeFeedbackOverlayClickModalHandler);
+	overlayForModal.removeEventListener('click', feedbackModalOverlayClickHandler);
 
 	closeFeedbackModalButton.removeEventListener('click', closeFeedbackModalButtonClickHandler);
 
-	document.removeEventListener('keydown', closeFeedbackModalKeydownHandler);
+	document.removeEventListener('keydown', feedbackModalEscapeKeydownHandler);
 }
 
 function openCallModalButtonClickHandler() {
@@ -62,11 +62,11 @@ function closeCallModalButtonClickHandler() {
 	closeCallModal();
 }
 
-function closeCallModalKeydownHandler(event) {
+function callModalEscapeKeydownHandler(event) {
 	if (event.keyCode === 27) closeCallModal();
 }
 
-function closeCallOverlayClickModalHandler() {
+function calModalOverlayClickHandler() {
 	closeCallModal();
 }
 
@@ -78,11 +78,11 @@ function closeFeedbackModalButtonClickHandler() {
 	closeFeedbackModal();
 }
 
-function closeFeedbackModalKeydownHandler() {
+function feedbackModalEscapeKeydownHandler() {
 	if (event.keyCode === 27) closeFeedbackModal();
 }
 
-function closeFeedbackOverlayClickModalHandler() {
+function feedbackModalOverlayClickHandler() {
 	closeFeedbackModal();
 }
 
