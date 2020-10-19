@@ -15,7 +15,7 @@ function openCallModal() {
 
 	closeCallModalButton.addEventListener('click', closeCallModalButtonClickHandler);
 
-	document.addEventListener('keydown', callModalEscapeKeydownHandler);
+	document.addEventListener('keydown', escapeKeydownModalHandler);
 }
 
 function closeCallModal() {
@@ -27,7 +27,7 @@ function closeCallModal() {
 
 	closeCallModalButton.removeEventListener('click', closeCallModalButtonClickHandler);
 
-	document.removeEventListener('keydown', callModalEscapeKeydownHandler);
+	document.removeEventListener('keydown', escapeKeydownModalHandler);
 }
 
 function openFeedbackModal() {
@@ -39,7 +39,7 @@ function openFeedbackModal() {
 
 	closeFeedbackModalButton.addEventListener('click', closeFeedbackModalButtonClickHandler);
 
-	document.addEventListener('keydown', feedbackModalEscapeKeydownHandler);
+	document.addEventListener('keydown', escapeKeydownModalHandler);
 }
 
 function closeFeedbackModal() {
@@ -51,7 +51,7 @@ function closeFeedbackModal() {
 
 	closeFeedbackModalButton.removeEventListener('click', closeFeedbackModalButtonClickHandler);
 
-	document.removeEventListener('keydown', feedbackModalEscapeKeydownHandler);
+	document.removeEventListener('keydown', escapeKeydownModalHandler);
 }
 
 function openCallModalButtonClickHandler() {
@@ -60,10 +60,6 @@ function openCallModalButtonClickHandler() {
 
 function closeCallModalButtonClickHandler() {
 	closeCallModal();
-}
-
-function callModalEscapeKeydownHandler(event) {
-	if (event.keyCode === 27) closeCallModal();
 }
 
 function calModalOverlayClickHandler() {
@@ -78,8 +74,14 @@ function closeFeedbackModalButtonClickHandler() {
 	closeFeedbackModal();
 }
 
-function feedbackModalEscapeKeydownHandler(event) {
-	if (event.keyCode === 27) closeFeedbackModal();
+function escapeKeydownModalHandler(event) {
+	if (event.keyCode !== 27) return;
+
+	if (feedbackModal.classList.contains('modal--open')) {
+		closeFeedbackModal();
+	} else if (callModal.classList.contains('modal--open')) {
+		closeCallModal();
+	}
 }
 
 function feedbackModalOverlayClickHandler() {
