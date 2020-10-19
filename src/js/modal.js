@@ -78,7 +78,7 @@ function closeFeedbackModalButtonClickHandler() {
 	closeFeedbackModal();
 }
 
-function feedbackModalEscapeKeydownHandler() {
+function feedbackModalEscapeKeydownHandler(event) {
 	if (event.keyCode === 27) closeFeedbackModal();
 }
 
