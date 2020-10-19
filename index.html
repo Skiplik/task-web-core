@@ -13,31 +13,37 @@
 		<div class="overlay overlay--modal wrapper__overlay"></div>
 		<div class="overlay overlay--menu wrapper__overlay"></div>
 
-		<div class="modal">
-			<div class="feedback modal__content">
+		<div class="modal modal--feedback">
+			<form class="feedback modal__content" action="#">
 				<button class="i-btn i-btn&#45;&#45;close feedback__close-btn"></button>
 				<h1 class="title feedback__title">Обратная связь</h1>
-				<input class="feedback__field" type="text" placeholder="Имя">
-				<input class="feedback__field" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Телефон">
-				<input class="feedback__field" type="email" placeholder="Электронная почта">
-				<textarea class="feedback__field feedback__field&#45;&#45;message" placeholder="Сообщение"></textarea>
+				<input class="feedback__field" type="text" placeholder="Имя" name="name">
+				<input class="feedback__field" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Телефон" name="phone">
+				<input class="feedback__field" type="email" placeholder="Электронная почта" name="email">
+				<textarea class="feedback__field feedback__field&#45;&#45;message" placeholder="Сообщение" name="message"></textarea>
 				<span class="feedback__info">
-				Нажимая “отправить”, вы даете согласие на <a href="#" class="feedback__link">обработку персональных данных</a> и соглашаетесь с нашей <a href="#" class="feedback__link">политикой конфиденциальности</a>
+					Нажимая “отправить”, вы даете согласие на
+					<a href="#" class="feedback__link">обработку персональных данных</a>
+					и соглашаетесь с нашей
+					<a href="#" class="feedback__link">политикой конфиденциальности</a>
 			</span>
-				<button class="i-btn i-btn&#45;&#45;text i-btn&#45;&#45;arrow call__send-btn">Отправить</button>
-			</div>
+				<button class="i-btn i-btn&#45;&#45;text i-btn&#45;&#45;arrow feedback__send-btn" type="submit">Отправить</button>
+			</form>
 		</div>
 
-		<div class="modal">
-			<div class="call modal__content">
+		<div class="modal modal--call">
+			<form class="call modal__content" action="#">
 				<button class="i-btn i-btn--close call__close-btn"></button>
 				<h1 class="title call__title">Заказать звонок</h1>
-				<input class="call__phone" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Телефон">
+				<input class="call__phone" type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Телефон" name="phone">
 				<span class="call__info">
-				Нажимая “отправить”, вы даете согласие на <a href="#" class="call__link">обработку персональных данных</a> и соглашаетесь с нашей <a href="#" class="call__link">политикой конфиденциальности</a>
+					Нажимая “отправить”, вы даете согласие на
+					<a class="call__link" href="#">обработку персональных данных</a>
+					и соглашаетесь с нашей
+					<a class="call__link" href="#">политикой конфиденциальности</a>
 			</span>
-				<button class="i-btn i-btn--text i-btn--arrow call__send-btn">Отправить</button>
-			</div>
+				<button class="i-btn i-btn--text i-btn--arrow call__send-btn" type="submit">Отправить</button>
+			</form>
 		</div>
 
 		<aside class="aside wrapper__aside">
