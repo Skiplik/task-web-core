@@ -3,7 +3,7 @@ const overlayForMenu = document.querySelector('.overlay--menu'),
 	menuContainer = document.querySelector('.aside'),
 	closeMenuButton = document.querySelector('.aside .i-btn--close');
 
-function openMenuButtonClickHandler() {
+function openMenu() {
 	overlayForMenu.classList.add('overlay--visible');
 
 	menuContainer.classList.add('aside--open');
@@ -15,7 +15,7 @@ function openMenuButtonClickHandler() {
 	document.addEventListener('keydown', closeMenuKeydownHandler);
 }
 
-function closeMenuButtonClickHandler() {
+function closeMenu() {
 	menuContainer.classList.remove('aside--open');
 
 	overlayForMenu.classList.remove('overlay--visible');
@@ -25,32 +25,22 @@ function closeMenuButtonClickHandler() {
 	overlayForMenu.removeEventListener('click', closeMenuOverlayClickHandler);
 
 	document.removeEventListener('keydown', closeMenuKeydownHandler);
+}
+
+function openMenuButtonClickHandler() {
+	openMenu();
+}
+
+function closeMenuButtonClickHandler() {
+	closeMenu();
 }
 
 function closeMenuKeydownHandler(event) {
-	if (event.keyCode !== 27) return;
-
-	menuContainer.classList.remove('aside--open');
-
-	overlayForMenu.classList.remove('overlay--visible');
-
-	closeMenuButton.removeEventListener('click', closeMenuButtonClickHandler);
-
-	overlayForMenu.removeEventListener('click', closeMenuOverlayClickHandler);
-
-	document.removeEventListener('keydown', closeMenuKeydownHandler);
+	if (event.keyCode === 27) closeMenu();
 }
 
-function closeMenuOverlayClickHandler(event) {
-	menuContainer.classList.remove('aside--open');
-
-	overlayForMenu.classList.remove('overlay--visible');
-
-	closeMenuButton.removeEventListener('click', closeMenuButtonClickHandler);
-
-	overlayForMenu.removeEventListener('click', closeMenuOverlayClickHandler);
-
-	document.removeEventListener('keydown', closeMenuKeydownHandler);
+function closeMenuOverlayClickHandler() {
+	closeMenu();
 }
 
 openMenuButton.addEventListener('click', openMenuButtonClickHandler)

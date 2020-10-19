@@ -6,7 +6,7 @@ const overlayForModal = document.querySelector('.overlay--modal'),
 	feedbackModal = document.querySelector('.feedback').closest('.modal'),
 	closeFeedbackModalButton = document.querySelector('.feedback .i-btn--close');
 
-function openCallModalButtonClickHandler() {
+function openCallModal() {
 	overlayForModal.classList.add('overlay--visible');
 
 	callModal.classList.add('modal--open');
@@ -18,7 +18,7 @@ function openCallModalButtonClickHandler() {
 	document.addEventListener('keydown', closeCallModalKeydownHandler);
 }
 
-function closeCallModalButtonClickHandler() {
+function closeCallModal() {
 	callModal.classList.remove('modal--open');
 
 	overlayForModal.classList.remove('overlay--visible');
@@ -30,33 +30,7 @@ function closeCallModalButtonClickHandler() {
 	document.removeEventListener('keydown', closeCallModalKeydownHandler);
 }
 
-function closeCallModalKeydownHandler(event) {
-	if (event.keyCode !== 27) return;
-
-	callModal.classList.remove('modal--open');
-
-	overlayForModal.classList.remove('overlay--visible');
-
-	overlayForModal.removeEventListener('click', closeCallOverlayClickModalHandler);
-
-	closeCallModalButton.removeEventListener('click', closeCallModalButtonClickHandler);
-
-	document.removeEventListener('keydown', closeCallModalKeydownHandler);
-}
-
-function closeCallOverlayClickModalHandler() {
-	callModal.classList.remove('modal--open');
-
-	overlayForModal.classList.remove('overlay--visible');
-
-	overlayForModal.removeEventListener('click', closeCallOverlayClickModalHandler);
-
-	closeCallModalButton.removeEventListener('click', closeCallModalButtonClickHandler);
-
-	document.removeEventListener('keydown', closeCallModalKeydownHandler);
-}
-
-function openFeedbackModalButtonClickHandler() {
+function openFeedbackModal() {
 	overlayForModal.classList.add('overlay--visible');
 
 	feedbackModal.classList.add('modal--open');
@@ -68,7 +42,7 @@ function openFeedbackModalButtonClickHandler() {
 	document.addEventListener('keydown', closeFeedbackModalKeydownHandler);
 }
 
-function closeFeedbackModalButtonClickHandler() {
+function closeFeedbackModal() {
 	feedbackModal.classList.remove('modal--open');
 
 	overlayForModal.classList.remove('overlay--visible');
@@ -78,32 +52,38 @@ function closeFeedbackModalButtonClickHandler() {
 	closeFeedbackModalButton.removeEventListener('click', closeFeedbackModalButtonClickHandler);
 
 	document.removeEventListener('keydown', closeFeedbackModalKeydownHandler);
+}
+
+function openCallModalButtonClickHandler() {
+	openCallModal();
+}
+
+function closeCallModalButtonClickHandler() {
+	closeCallModal();
+}
+
+function closeCallModalKeydownHandler(event) {
+	if (event.keyCode === 27) closeCallModal();
+}
+
+function closeCallOverlayClickModalHandler() {
+	closeCallModal();
+}
+
+function openFeedbackModalButtonClickHandler() {
+	openFeedbackModal();
+}
+
+function closeFeedbackModalButtonClickHandler() {
+	closeFeedbackModal();
 }
 
 function closeFeedbackModalKeydownHandler() {
-	if (event.keyCode !== 27) return;
-
-	feedbackModal.classList.remove('modal--open');
-
-	overlayForModal.classList.remove('overlay--visible');
-
-	overlayForModal.removeEventListener('click', closeFeedbackOverlayClickModalHandler);
-
-	closeFeedbackModalButton.removeEventListener('click', closeFeedbackModalButtonClickHandler);
-
-	document.removeEventListener('keydown', closeFeedbackModalKeydownHandler);
+	if (event.keyCode === 27) closeFeedbackModal();
 }
 
 function closeFeedbackOverlayClickModalHandler() {
-	feedbackModal.classList.remove('modal--open');
-
-	overlayForModal.classList.remove('overlay--visible');
-
-	overlayForModal.removeEventListener('click', closeFeedbackOverlayClickModalHandler);
-
-	closeFeedbackModalButton.removeEventListener('click', closeFeedbackModalButtonClickHandler);
-
-	document.removeEventListener('keydown', closeFeedbackModalKeydownHandler);
+	closeFeedbackModal();
 }
 
 openCallModalButton.forEach(function(btn) {
