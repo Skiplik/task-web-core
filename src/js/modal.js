@@ -1,9 +1,9 @@
 const overlayForModal = document.querySelector('.overlay--modal'),
 	openCallModalButton = document.querySelectorAll('.i-btn--call'),
-	callModal = document.querySelector('.call').closest('.modal'),
+	callModal = document.querySelector('.modal--call'),
 	closeCallModalButton = document.querySelector('.call .i-btn--close'),
 	openFeedbackModalButton = document.querySelectorAll('.i-btn--message'),
-	feedbackModal = document.querySelector('.feedback').closest('.modal'),
+	feedbackModal = document.querySelector('.modal--feedback'),
 	closeFeedbackModalButton = document.querySelector('.feedback .i-btn--close');
 
 function openCallModal() {
